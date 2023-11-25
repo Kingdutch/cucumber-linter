@@ -1,0 +1,19 @@
+{
+    "name": "kingdutch/cucumber-linter",
+    "description": "Cucumber Linter - Static analysis tool for Cucumber and Behat",
+    "license": "MIT",
+    "keywords": ["dev", "static analysis", "behat", "cucumber"],
+    "require": {
+        "php": "^8.0"
+    },
+    "bin": [
+        "cucumber-linter",
+        "cucumber-linter.phar"
+    ],
+    "support": {
+        "issues": "https://github.com/kingdutch/cucumber-linter/issues",
+        "forum": "https://github.com/kingdutch/cucumber-linter/discussions",
+        "source": "https://github.com/kingdutch/cucumber-linter-src",
+        "security": "https://github.com/kingdutch/cucumber-linter/security/policy"
+    }
+}
