@@ -1,0 +1,31 @@
+name: "Create release"
+
+on:
+  push:
+    tags:
+      - '*'
+
+concurrency: release
+
+jobs:
+  deploy:
+    name: "Deploy"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+
+      - name: "Create release"
+        uses: softprops/action-gh-release@v1
+        id: release
+        with:
+          token: ${{ secrets.CUCUMBER_LINTER_BOT_TOKEN }}
+          draft: true
+          discussion_category_name: "Announcements"
+          files: |
+            cucumber-linter.phar
+            cucumber-linter.phar.sig
+
+      - name: "Print release URL"
+        run: echo "${{ steps.release.outputs.url }}" >> $GITHUB_STEP_SUMMARY
